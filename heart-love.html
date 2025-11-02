@@ -1,0 +1,44 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #fff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  .heart {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
+  }
+  .heart:before, .heart:after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: red;
+    border-radius: 50%;
+  }
+  .heart:before { top: -80px; }
+  .heart:after  { left: 80px;  }
+  @keyframes beat {
+    0%, 100% { transform: scale(1) rotate(-45deg); }
+    50%      { transform: scale(1.12) rotate(-45deg); }
+  }
+  .message {
+    margin-top: 24px;
+    font-size: clamp(18px, 4vw, 28px);
+    color: #333;
+    text-align: center;
+  }
+</style>
+
+<div class="heart" aria-hidden="true"></div>
+<div class="message">I love you</div>
